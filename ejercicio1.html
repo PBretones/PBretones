@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FORMULARIO DE REGISTRO</title>
+    
+    </head>
+    <body>
+    <h1>Formulario de registro</h1>
+    <!-- Formulario -->
+<form action="procesar-datos.php" method="POST">
+    <fieldset>
+    <legend>Información personal</legend>
+        <div class="input">
+            
+            <label for="nameInput">Nombre:</label>
+            <input type="text" id="nameInput" name="nameInput" placeholder="Elon">
+            <label for="surnameInput">Apellido:</label>
+            <input type="text" id="surnameInput" name="surnameInput"  placeholder="Musk">
+       
+       
+        </div>
+        <br>
+        <div class="input">
+            
+        <label for="ageInput">Edad:</label>       
+        <input type="number" id="ageInput" name="age" value="40">
+        </div> 
+       
+       <br>
+        <div class="input">
+
+            <label for="emailInput">Email:</label>
+            <input type="email" id="emailInput" name="email" placeholder="nombre@email.com" required>
+        </div>
+
+        <br>
+        <div class="input">
+            <label for="passwordInput">Pasword:</label>
+            <input type="password" id="passwordInput" name="password" placeholder="*******">
+        </div>
+
+        <fieldset>
+        <legend>Género</legend>
+        <div class="input">
+            <input type="radio" id="female" name="gender">
+            <label for="female">Mujer</label>
+        </div>
+        <div class="input">
+            <input type="radio" id="male" name="gender">
+            <label for="male">Hombre</label>
+        </div>
+
+        <div class="input">
+            <input type="radio" id="other" name="gender">
+            <label for="other">Otro</label>
+        </div>
+        </fieldset>
+        <br>
+        <div class="input">
+        <label for="countryInput">País</label>
+        <input list="countries" id="countryInput" name="country" placeholder="Introduce tu país">
+        <datalist id="countries">
+            <option value="Francia">Francia</option>
+            <option value="Alemania">Alemania</option>
+            <option value="España">España</option>
+            <option value="Rusia">Rusia</option>
+            <option value="Portugal">Portugal</option>
+        </datalist> 
+        </div>
+        <br>
+
+        <div class="input">
+        <label for="language">Lenguaje de programación:</label>
+        <select name="language" id="language">
+        <option value="javascript">Javascript</option>
+        <option value="python">Python</option>
+        <option value="angular">Angular</option>
+        <option value="react">React</option>
+
+       </select>
+
+       <fieldset disabled>
+        <legend>Selecciona tu academia de programación favorita:</legend>
+        <div>
+        <input type="radio" id="codespace" name="academy" checked>
+        <label for="codespace">Code Space Academy</label>
+        </div>
+        <div>
+        <input type="radio" id="academy2" name="academy">
+        <label for="academy2">Academia 2</label>
+        </div>
+        <div>
+        <input type="radio" id="academy3" name="academy">
+        <label for="academy3">Academia 3</label>
+        </div>
+       </fieldset>
+
+
+    
+
+       
+    </fieldset>
+
+    
+   <div>
+        <br>    <input type="checkbox" id="termsInput" name="terms">
+        <label for="terms" id="termsInput" name="terms">Acepto recibir cientos de miles de correos irrelevantes</label>
+        <br>
+        <input type="checkbox" id="termsInput" name="terms">
+        <label for="terms" id="termsInput" name="terms">Acepto los terminos y condiciones</label>
+   </div>
+
+   <br><input type="submit" value="Enviar">
+   <input type="reset" value="Vaciar formulario"><br>
+   <br>
+
+
+</form>
+    </body>
+</html>

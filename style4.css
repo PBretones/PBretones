@@ -1,0 +1,87 @@
+<style>
+    .header {
+        
+        overflow: auto;
+        padding: 10px;
+    }
+
+    a.logo {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        margin: -100px;
+    }
+
+    .searchInput {
+
+        position: relative;
+        clear: both;
+        float: right;
+    }
+    .bar{
+        
+    position: left;
+    margin-left: 25%;
+    }
+    
+    .bar a{
+        color:#575757;
+        text-decoration: none;
+        margin: 1%;
+         }
+    .left{
+        margin: 1%;
+        width:20%;
+        border: 1px;
+        border-style: dashed;
+        position: absolute;
+        padding: 1%;
+        text-align: justify;
+    }
+    hr{
+        border: none;
+        height: 1px;
+        margin: 1%;
+        opacity: 0.2;
+        border: 1px solid;
+    }
+    .boss{
+        width: 75%;
+        margin: 1%;
+        float: right;
+        
+    }
+    .menu {
+        margin: 1%;
+        width:72%;
+        
+        padding: 1%;
+        text-align: justify;
+        
+    }
+    .boardg{
+        float: left;
+    }
+
+    .main{
+        width: 20%;
+        border: 1px dashed black;
+        float: right;
+        margin: 1%;
+        padding: 1%
+    }
+    
+   
+   .footer{
+        clear: both;
+        border: 1px solid silver;
+        bottom: 30px;
+        width: 99%;
+        padding: 10px 10px;
+        margin-bottom: 0;
+   }
+   
+   a.footer_right{
+    float: right;
+   }
+   </style>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp</title>
+
+</head>
+
+<body>
+    <!-- Enlaces -->
+    <a href="blog.html" target="_blank">Ir a blog</a>
+    <br>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt repudiandae sint, hic fugit dolorem amet dicta
+        minima nulla quisquam eligendi laboriosam voluptatum necessitatibus nostrum. Nulla itaque sit temporibus error
+        eos.</p>
+
+
+<!-- Formularios -->
+
+<h3>Formularios</h3>
+
+<form action="procesar-datos.php" method="post">
+
+    <div>
+        <label for="nameInput">Usuario</label>
+        <input type="text" id="nameInput" name="nameImput" placeholder="MAMARRACHO"><br>
+        </div>
+    <br>
+
+    <div>
+    <label for="passwordInput">Contraseña</label>
+    <input type="password" id="passwordInput" name="password" placeholder="abc123" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="emailInput">Correo Electronico</label>
+        <input type="email" id="emailInput" name="email" placeholder="@" required>
+    </div>
+
+    <div>
+        <label for="message"> Mensaje</label><br>
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Introduzca su mensaje"></textarea>
+    </div>
+
+    <div class="input">
+        <label for="sex">Género</label><br>
+        <select name="sex" id="sex">
+            <option value="female">Femenino</option>
+            <option value="male">Masculino</option>
+            
+        </select>
+    </div><br>
+
+    <div class="input">
+        <label for="ageInput">Edad</label><br>
+        <input type="number" id="ageInput" name="age" min="18" value=18>
+    </div><br>
+
+    <div class="input">
+        <label for="dateInput">Fecha de nacimiento</label><br>
+        <input type="date" id="dateInput" name="birthday">
+    </div><br>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Reset">
+
+    <div class="input">
+        <label for="carBrandInput">La marca de tu coche</label>
+        <input list="carBrands" id="carBrandInput" name="carBrand">
+        <datalist id="carBrands">
+            <option value="bmw">BMW</option>
+            <option value="mercedes">mercedes</option>
+            <option value="ford">Ford</option>
+            <option value="volkswagen">volkswagen</option>
+        </datalist>
+    </div>
+
+    <fieldset>
+        <legend>Radio</legend>
+        <div>
+            <input type="radio" id="pareja-de-hecho" name="relationship">
+        <label for="pareja-de-hecho">Pareja de hecho</label>
+        </div><br>
+        <div>
+            <input type="radio" id="marriedOption" name="relationship">
+            <label for="marriedOption">Divorciado</label></fieldset>
+        </div>
+    </fieldset>
+
+    <label for="fuelLevel">Cantidad de gasolina</label>
+    <meter id="fuelLevel" min="0" max="100" low="33" high="66" value="40"></meter>
+
+    <label for="file">Progreso descarga</label>
+    <progress id="fuelLevel"  max="100" value="66"></progress>
+
+    <label for="range">Rango de valor</label>
+    <input type="range" id="range" value="66" name="range"></input>
+</form>
+<br>
+
+
+<!-- Multimedia -->
+
+<h3>Multimedia</h3>
+<a href="https://tse1.mm.bing.net/th?id=OIP.EgSPriuEnAtlIWJV8R_E1QHaGs&pid=Api&P=0&w=161&h=146">
+<img src="https://tse1.mm.bing.net/th?id=OIP.EgSPriuEnAtlIWJV8R_E1QHaGs&pid=Api&P=0&w=161&h=146" alt="Github" >
+<figcaption>Gato Github</figcaption>
+</a>
+<br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OgIRAjnnJzI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<iframe witdh="800px" height="600px" src="https://codespaceacademy.com" frameborder="0"></iframe>
+<object width="100%" height="500px"data="http://bases.cortesaragon.es/bases/NdocumenVIII.nsf/917e094c66cbc68ec12575680047a582/636112413e2a82e0c1257c750032907f/$FILE/1-que%20es.pdf" type=""></object>
+<br><hr><br>
+<!-- Citas/Quotations -->
+<h3>Citas Famosas</h3>
+
+<blockquote> 
+    Menudo hijo de puta, tienes un fiebrazo del copón. De gripe nada, tu estás infectado. Menudos ganglios tienes, hijo de la gran puta. Olvídate de respirar, potencia esa pneumonía tan espectacular que tienes, hijo de una perra sarnosa. Qué puta envidia me das! Cuida un poco la fiebre y tira de cama. Intubación y UCI es lo que necesitas para terminar de ponerte del copón. Menudo hijo de la gran puta eres, ya quisiera yo ese pedazo de virus. Cabronazo, hijo de mil putas, te invidio muchísimo. Insisto, cuida un poco la infección y machácate en el triaje, con ese bicho puedes quedarte del copón, cabronazo. Y a los que dicen que estás con la gripe ni puto caso, son un atajo de inmunodeprimidos insecto-palos que solo les gusta lamer ventolín. Tu, sin embargo, estás del copón, hijo de la grandísima puta. Qué suerte tenéis algunos con la transmisión. 
+</blockquote>
+<q>Forocoches</q>
+
+<!-- Scripting -->
+<h3>Scripting</h3>
+<script>document.write("Hola futuro");
+</script>
+
+<div style="height:500px"></div>
+
+</body>
+
+
+
+
+
+</html>
