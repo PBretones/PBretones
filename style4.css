@@ -57,6 +57,7 @@
         
         padding: 1%;
         text-align: justify;
+        box-sizing: border-box;
         
     }
     .boardg{

@@ -1,0 +1,34 @@
+.flex-parent{
+    padding: 20px;
+    background-color: rebeccapurple;
+
+    display: flex;
+    flex-flow: column-reverse;
+
+
+    justify-content: right;
+    align-items: stretch;
+    
+}
+
+.flex-parent > div:nth-child(odd){
+display: flex;
+
+justify-content: center;
+align-items: center;
+    background-color: red;
+}
+
+.flex-parent > div:nth-child(even){
+    background-color: yellow;
+}
+
+[class^="flex-child-"]{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    
+}

@@ -1,5 +1,3 @@
-
-
 .headertext {
     background-color: orangered;
     position: absolute;
@@ -16,7 +14,7 @@
     color: white;
     margin: auto;
     margin-top: 15px;
-    margin-left: 10vw;
+    margin-left: 10%;
 }
 
 .subheader {
@@ -37,7 +35,7 @@
 
 .subheader_row {
     margin-top: 15px;
-    margin-left: 10vw;
+    margin-left: 10%;
 }
 
 .banner {
@@ -68,56 +66,80 @@
 .reading_area {
     position: absolute;
     width: 100%;
-    height: 300px;
+    height:80%;
     left: 0px;
     top: 710px;
     background-color: silver;
+    
 }
 
-.text_left,.text_right{
+.box_1, .box_2 {
     display: inline-block;
+    ;
 }
 
-.text_left {
-    margin-left: 10vw;
-    width: 750px;
+.box_1 {
+    max-height: 200px;
+    margin-left: 10%;
     float: left;
+    max-width: 45%;
+    box-sizing: border-box;
+    padding: 20px;
+    padding-left: 30px;
+    margin-block-end: 10%;
 }
 
-.text_right {
-    height: 200px;
+.box_2{
+    margin-top: 25px;
+    margin-right: 50px;
+    height: 180px;
     width: 300px;
-    background-color: darkcyan;
+    
+    padding: 20px;
+    text-align: center;
+    background-color: blue;
     float: right;
-    margin-top: 1vw;
-    margin-right: 10vw;
+    box-sizing: content-box;
 }
-
-.text_right p {
-    margin: 20px;
+.text_left{
+    
+    text-align: justify;
 }
 
 .footer {
-    position: absolute;
+    
+    position: fixed;
     left: 0;
     width: 100%;
-    height: 100px;
-    top: 1000px;
     bottom: 0px;
+    margin-top: 5%;
     background-color: darkcyan;
 }
 
 .footer p {
-    position: relative;
-    margin-top: 50px;
-    margin-left: 45%;
+    text-align: center;
+    box-sizing: border-box;
+    
 }
-@media only screen and (max-width:768px) {
-    /* .text_left{
+
+@media only screen and (max-width:888px) {
+    .box_1{
+        
+        min-width: 80%;
+        font-size-adjust: inherit;
+    }
+
+    .box_1,.box_2{
+        box-sizing: content-box;
+        margin-left: 10%;
+        float: none;
+        display: block;
         
     }
-    
-    .text_right{
-        float: left;
-    } */
+
+    .box_2{
+                margin-right: 10%;
+    }
 }
+
+
