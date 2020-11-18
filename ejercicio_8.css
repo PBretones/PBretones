@@ -1,0 +1,28 @@
+.padre1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr);
+    grid-template-areas: "nav nav" "c1 c2" "c1 c2" "c1 c3" "footer footer";
+    gap: 10px;
+    
+}
+
+[class^="hijo"]{
+    background-color: darkgoldenrod;
+}
+.hijo1 {
+    grid-area: nav;
+}
+
+.hijo2{
+    grid-area: c1;
+}
+.hijo3{
+    grid-area: c2;
+}
+.hijo4{
+    grid-area: c3;;
+}
+.hijo5{
+    grid-area: footer;
+}
