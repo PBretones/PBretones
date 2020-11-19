@@ -4,25 +4,30 @@
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr);
     grid-template-areas: "nav nav" "c1 c2" "c1 c2" "c1 c3" "footer footer";
     gap: 10px;
-    
 }
 
-[class^="hijo"]{
-    background-color: darkgoldenrod;
-}
+
 .hijo1 {
     grid-area: nav;
+    background-color: lightblue
 }
 
-.hijo2{
+.hijo2 {
     grid-area: c1;
+    background-color: violet;
 }
-.hijo3{
+
+.hijo3 {
     grid-area: c2;
+    background-color: navy;
 }
-.hijo4{
-    grid-area: c3;;
+
+.hijo4 {
+    grid-area: c3;
+    background-color: paleturquoise;
 }
-.hijo5{
+
+.hijo5 {
     grid-area: footer;
+    background-color: lightyellow;
 }
