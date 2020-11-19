@@ -1,0 +1,135 @@
+.padre1 {
+    display: grid;
+<<<<<<< HEAD
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "b1 b2 b3 b4" "b5 b6 b7 b8" "b9 b10 b11 b12" "b13 b14 b15 b16";
+    gap: 25px;
+    height: 768px;
+    width: 768px;
+   
+  
+}
+
+[class^="hijo"] {
+    background-color: lightskyblue;
+    animation-duration: 1s;
+    animation-name: pop-up;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+[class^="hijo"]:hover {
+    transition: 0,25s;
+    transform: scale(1.1);
+}
+
+
+@keyframes pop-up {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hijo1 {
+    grid-area: b1;
+    animation-delay: none;
+}
+
+.hijo2 {
+    grid-area: b2;
+    animation-delay: 1s;
+}
+
+.hijo3 {
+    grid-area: b3;
+    animation-delay: 2s;
+}
+
+.hijo4 {
+    grid-area: b4;
+    animation-delay: 3s;
+}
+
+.hijo5 {
+    grid-area: b5;
+    animation-delay: 4s;
+}
+
+.hijo6 {
+    grid-area: b6;
+    animation-delay: 5s;
+}
+
+.hijo7 {
+    grid-area: b7;
+    animation-delay: 6s;
+}
+
+.hijo8 {
+    grid-area: b8;
+    animation-delay: 7s;
+}
+
+.hijo9 {
+    grid-area: b9;
+    animation-delay: 8s;
+}
+
+.hijo10 {
+    grid-area: b10;
+    animation-delay: 9s;
+}
+
+.hijo11 {
+    grid-area: b11;
+    animation-delay: 10s;
+}
+
+.hijo12 {
+    grid-area: b12;
+    animation-delay: 11s;
+}
+
+.hijo13 {
+    grid-area: b13;
+    animation-delay: 12s;
+}
+
+.hijo14 {
+    grid-area: b14;
+    animation-delay: 13s;
+}
+
+.hijo15 {
+    grid-area: b15;
+    animation-delay: 14s;
+}
+
+.hijo16 {
+    grid-area: b16;
+    animation-delay: 15s;
+=======
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "a b a b" "a b a b" "a b a b" "a b a b";
+    gap: 10px;
+}
+
+[class^="hijo-"] {
+    background-color: lightseagreen;
+}
+
+:nth-child(odd){
+    
+    grid-area: a;
+}
+
+:nth-child(even){
+    grid-area: b;
+>>>>>>> 53737e64db063fd20f1f4209c6092aaad201e8a6
+}
