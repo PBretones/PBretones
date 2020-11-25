@@ -1,0 +1,197 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 300px;
+    padding-left: 200px;
+    justify-content: start;
+    align-items: center;
+    background-color: #f8f9fb;
+    box-sizing: border-box;
+}
+
+
+.banner {
+    height: 275px;
+    width: 100%;
+    
+}
+
+.middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.searchbar, .user_area {
+    display: inline-block;
+}
+
+.middle, .buttons, .navbar {
+    min-height: 95px;
+}
+.buttons{
+    float: left;
+    display: flex;
+    align-items: flex-end;
+    min-width: 500px;
+    max-width: 1200px;
+}
+
+
+.searchbar {}
+
+.title, .share {
+    display: inline-block;
+}
+
+.user_area {
+    min-width: 125px;
+    justify-content: space-evenly;
+}
+
+.share {
+    min-width: 250px;
+    justify-content: space-evenly;
+}
+
+.user_area, .share {
+    float: right;
+    display: flex;
+}
+
+.share button {
+    background-color: transparent;
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid #505966;;
+    cursor: pointer;
+    color: #505966;
+    padding: 6px 24px;
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+    fill: #7fe5b0;
+}
+
+svg:hover {
+    fill: #7fe5b0;
+    cursor: pointer;
+}
+
+.aside svg {
+    margin: 18px;
+    width: 24px;
+    height: 24px;
+    fill: #505966;
+}
+
+svg:hover {
+    fill: #7fe5b0;
+    cursor: pointer;
+}
+.dots svg{
+    fill:  #505966;
+    cursor: pointer;
+}
+
+.icons {
+    margin-top: 150px;
+    width: 75px;
+    height: 500px;
+}
+
+.aside {
+    position: absolute;
+    display: flex;
+    flex-flow: row;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 1147px;
+    background-color: #1f2532;
+    z-index: 1;
+}
+
+.share button:hover {
+    background-color: transparent;
+}
+
+.share button:active {
+    top: 1px;
+}
+
+.buttons a {
+    margin-right: 25px;
+    text-decoration: none;
+    color: #bababa;
+}
+
+.buttons a:hover {
+    border-bottom: 3px solid #7fe5b0;
+    color: #505966;
+}
+
+.main {
+    top: 300px;
+    left: 60px;
+    width: 1848px;
+    height: 100%;
+    background-color: white;
+}
+
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: #f8f9fb;
+}
+
+.main input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: white;
+}
+
+.no-outline:focus {
+    outline: none;
+}
+
+.dropdownBox select {
+    text-decoration: none;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+}
+
+.filterbar {
+    margin-left: 132px;
+    margin-top: 50px;
+    width: 1200px;
+    height: 35px;
+    border: 1px solid black;
+}
+
+.searchfilter {
+    border: 1px solid black;
+    width: 600px;
+    height: 35px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-bottom-style: hidden;
+}
+
+.dropdownBox, .searchfilter {
+    position: relative;
+    display: inline-block;
+}

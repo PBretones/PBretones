@@ -1,6 +1,5 @@
 .padre1 {
     display: grid;
-<<<<<<< HEAD
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas: "b1 b2 b3 b4" "b5 b6 b7 b8" "b9 b10 b11 b12" "b13 b14 b15 b16";
@@ -113,23 +112,4 @@
 .hijo16 {
     grid-area: b16;
     animation-delay: 15s;
-=======
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "a b a b" "a b a b" "a b a b" "a b a b";
-    gap: 10px;
-}
-
-[class^="hijo-"] {
-    background-color: lightseagreen;
-}
-
-:nth-child(odd){
-    
-    grid-area: a;
-}
-
-:nth-child(even){
-    grid-area: b;
->>>>>>> 53737e64db063fd20f1f4209c6092aaad201e8a6
 }

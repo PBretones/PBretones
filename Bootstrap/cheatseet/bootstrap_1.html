@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--  Etiquetas Meta requeridas -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Bootstrap_1</title>
+
+    <!-- CSS de Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/custom.css">
+   
+</head>
+
+<!-- Comienzo contenido -->
+
+<body>
+
+    <header id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="header carousel-inner">
+            <div class="carousel-item active">
+                <img src="kick1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="kick2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="kick3.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </header>
+
+
+    <!-- NAV_BAR -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand d-none d-lg-block" href="#">Board Game Store</a>
+        <a class="navbar-brand d-lg-none d-block" href="#">BGS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+                <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <!-- Login -->
+                        Login
+                    </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <!-- Login Modal -->
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">User Login</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp">
+                                            <small id="emailHelp" class="form-text text-muted">We'll never share your
+                                                email with anyone else.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1">
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0 d-none d-lg-block">
+                <!-- Mobile First => Desde standar hasta LG(momento burger) hacemos desaparecer la barra de búsqueda.Después de LG ponemos BLOCK para que reaparezca -->
+                <input class="form-control mr-sm-2" type="search" placeholder="Catan not found" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <!-- Cards -->
+   <!--  <div class="container mt-3 mb-3">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
+            <div class="col mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://ksr-ugc.imgix.net/assets/031/441/242/b0dab3c96d02e7607209531a6f89b76d_original.jpg?ixlib=rb-2.1.0&crop=faces&w=352&h=198&fit=crop&v=1605599286&auto=format&frame=1&q=92&s=d9793c2690db184235ba1e1633a89f3a"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Endless Winter</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Fund it</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://ksr-ugc.imgix.net/assets/030/377/607/c60204fccc5b6a3cd0199ee2c6966143_original.jpg?ixlib=rb-2.1.0&crop=faces&w=352&h=198&fit=crop&v=1598605512&auto=format&frame=1&q=92&s=b3b6547c1446528842ba4f2b39a0b949"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Northgard</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Fund it</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://ksr-ugc.imgix.net/assets/026/454/967/6b4c5d0e98b59cbd68c2a26b69134405_original.jpg?ixlib=rb-2.1.0&crop=faces&w=352&h=198&fit=crop&v=1568315215&auto=format&frame=1&q=92&s=d42e65e681ec645a5b7d8f3b27e3fa0e"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Root</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Fund it</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://ksr-ugc.imgix.net/assets/025/091/720/fa2d11dd8e2ec93320ca447ac1ce910e_original.jpg?ixlib=rb-2.1.0&crop=faces&w=352&h=198&fit=crop&v=1557501270&auto=format&frame=1&q=92&s=cad0ae46f0523abfc5d8d1ee5f19419e"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Icaion</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Fund it</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://ksr-ugc.imgix.net/assets/024/147/308/4b8af84461ee9e42ad44792a87ed9726_original.jpg?ixlib=rb-2.1.0&crop=faces&w=352&h=198&fit=crop&v=1550616367&auto=format&frame=1&q=92&s=454055ac183d873b30e631f96ea52f4a"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Parks</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Fund it</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://ksr-ugc.imgix.net/assets/015/600/493/f74915e90b1d1cb289e219fff2b47a62_original.jpg?ixlib=rb-2.1.0&crop=faces&w=352&h=198&fit=crop&v=1490063748&auto=format&frame=1&q=92&s=5f5a7f8201e087bedadef857b4979e3f"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">The Grimm Forest</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Fund it</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Tabla -->
+    <table id="data">
+        <tr> <td>Row 1</td></tr>
+        <tr> <td>Row 2</td></tr>
+        <tr> <td>Row 3 </td></tr>
+        <tr> <td>Row 4</td></tr>
+        <tr> <td>Row 5</td></tr>
+        <tr> <td>Row 6</td></tr>
+        <tr> <td>Row 7</td></tr>
+        <tr> <td>Row 8</td></tr>
+        <tr> <td>Row 9</td></tr>
+        <tr> <td>Row 10</td></tr>
+        <tr> <td>Row 11</td></tr>
+        <tr> <td>Row 12</td></tr>
+        <tr> <td>Row 13</td></tr>
+        <tr> <td>Row 14</td></tr>
+        <tr> <td>Row 15</td></tr>
+        <tr> <td>Row 16</td></tr>
+        <tr> <td>Row 17</td></tr>
+        <tr> <td>Row 18</td></tr>
+      </table>
+         
+  <!--   </div>
+            <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link text-sucess" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link text-sucess" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link text-sucess" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link text-sucess" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link text-sucess" href="#">Next</a></li>
+                </ul>
+              </nav>
+        </table> -->
+
+
+</body>
+
+
+<!-- Fin de contenido -->
+
+
+<!-- Script -->
+<script src="js/jquery-3.5.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/tablepagination_bs1.js"></script>
+
+<!-- Fin scripts -->
+
+
+
+</html>
