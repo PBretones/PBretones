@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas JS</title>
+    
+</head>
+
+
+<body>
+    <a href="#" onclick="alert('Hola Mundo.Soy un script inline');">Inline script</a>
+    <a href="#">Internal Script</a>
+    <a href="#" id="external">External Script</a>
+
+    <script>
+        function hey(){
+            alert("HOLA");
+        };
+        document.getElementsByTagName("a")[1].addEventListener("click", hey);
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
