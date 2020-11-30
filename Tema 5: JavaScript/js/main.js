@@ -2,7 +2,7 @@ console.log('Hola Mundo');
 function hey() {
     alert("HOLA EXTERNO");
 };
-document.getElementsByTagName("a")[2].addEventListener("click", hey);
+//document.getElementsByTagName("a")[2].addEventListener("click", hey);
 
 
 /* Variables */
@@ -69,6 +69,8 @@ const car = {
     weight: 2200,
     owner: "Paco",
     year: 2019,
+
+
 }
 
 console.log(typeof car);
@@ -193,18 +195,103 @@ while (i < 21) {
 console.log(selectedColors);
 
 
-function myFunction(item, index){
+function myFunction(item, index) {
     console.log(`Elemento ${index} es: ${item}`);
 }
 selectedColors.forEach(myFunction);
 // El anterior forEach es equivalente al siguiente for:
 
-for (let i=1; i< selectedColors.length - 1;i++) {
+for (let i = 1; i < selectedColors.length - 1; i++) {
     console.log(`Elemento ${i} es: ${selectedColors[i]}`);
 }
 
 //for...of
 
-for(let color of selectedColors){
+for (let color of selectedColors) {
     console.log(`FOR ... OF : Elemento ${i} es: ${selectedColors[i]}`);
 }
+/* Break */
+
+let k = 0;
+let z = 0;
+
+
+firstLabel: while (false) {
+    console.log("Outer loop: ", k);
+    k++;
+    while (false) {
+        console.log("Inner loops: ", z);
+        z++;
+        if (z === 10 && k === 10) {
+            break firstLabel
+
+        } else if (z === 10) {
+            break;
+        }
+    }
+}
+
+console.clear();
+/* Continue */
+
+for (let i = 0; i < 5; i++) {
+    if (i === 3)
+        continue;
+    console.log("Using continue: ", i);
+}
+
+console.clear();
+/* Constructores de objetos utilizando funciones */
+function Car(brand, color, weight, topSpeed) {
+    this.brand = brand;
+    this.color = color;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+
+    this.description = () => `Este ${this.brand} ${this.color} pesa ${this.weight} y puede llegar a los ${this.topSpeed}`
+}
+
+
+const miCoche = new Car("BMW", "red", 1800, 230);
+miCoche.year = 2019; //Añadimos una nueva propiedad al objeto miCoche
+console.log(miCoche.description());
+console.log(miCoche);
+
+
+console.clear();
+//Iterar sobre todas las propiedades de un objeto
+for (let key in miCoche){ // Alternativas: Object.keys(object);Object.values(obj); Object.entries();
+    console.log(key,miCoche[key]);
+}
+
+// Comprobar si una propiedad está presente en un objeto
+
+if ("year" in miCoche)
+    console.log("El coche tiene año especificado");
+
+
+    /* DOM */
+// Aspectos basicos
+console.log(document);
+console.log(document.URL);
+console.log(document.domain);
+console.log(document.title);
+console.log(document.links);
+console.log(document.images);
+
+// Selectores
+const contenedores = document.getElementsByTagName("div");
+const grandparent = contenedores[0];
+const grandparent2 = contenedores["grandparent"];
+
+const parents = document.getElementsByClassName("parent");
+let parent1 = parents[0];
+parent1= parents["parent1"];
+parent1 = parents.parent1;
+
+const child1 = document.getElementById("child1");
+const child2 = document.querySelector("div#grandparent.gradparent>.parent#parent1>#child2");
+console.clear();
+
+console.log(child1.textContent);
+console.log(child1.innerHTML);

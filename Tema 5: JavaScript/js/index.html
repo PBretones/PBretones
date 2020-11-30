@@ -5,7 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pruebas JS</title>
-    
+<style>
+    a{
+        display: block;
+        font-size: 2em;
+    }
+
+    #grandparent,#grandparent div{
+        padding: 25px;
+        border: 5px solid black;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-grow: 1;
+    }
+
+    #grandparent{
+        background-color: brown;
+    }
+    .parent{
+
+        background-color: darkcyan;
+    }
+    .child{
+        background-color: khaki;
+    }
+</style>
 </head>
 
 
@@ -13,13 +39,22 @@
     <a href="#" onclick="alert('Hola Mundo.Soy un script inline');">Inline script</a>
     <a href="#">Internal Script</a>
     <a href="#" id="external">External Script</a>
+    <h1>Acceso al DOM</h1>
+    <div class="grandparent" id="grandparent">
+        <div class="parent" id="parent1">
+            <div class="child" id="child1">Child 1</div>
+            <div class="child" id="child2">Child 2</div>
+        </div>
+        <div class="parent" id="parent2">
+            <div class="child" id="child3">Child 3 </div>
+            <div class="child" id="child4">Child 4</div>
+        </div>
+    </div>
 
     <script>
-        function hey(){
-            alert("HOLA");
-        };
-        document.getElementsByTagName("a")[1].addEventListener("click", hey);
+
     </script>
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
