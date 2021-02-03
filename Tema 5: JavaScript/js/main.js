@@ -2,7 +2,7 @@ console.log('Hola Mundo');
 function hey() {
     alert("HOLA EXTERNO");
 };
-//document.getElementsByTagName("a")[2].addEventListener("click", hey);
+document.getElementsByTagName("a")[2].addEventListener("click", hey);
 
 
 /* Variables */
@@ -61,6 +61,17 @@ console.log(str.toLocaleLowerCase());
 console.log(str.replace("Futuro", "mundo"));
 
 console.log(`A ${name} le mide lo menos ${age}`);
+
+/* Parsing - Cambio de tipo de dato */
+
+let num3 = "1000";
+console.log(typeof num3, num3);
+console.log(typeof parseInt(num3), parseInt(num3));
+console.log(typeof parseFloat(num3), parseFloat(num3));
+console.log(typeof Number(num3),Number(num3));
+
+console.log("1000" + 1000,typeof ("1000" + 1000));
+
 
 /* Objects */
 
@@ -260,8 +271,8 @@ console.log(miCoche);
 
 console.clear();
 //Iterar sobre todas las propiedades de un objeto
-for (let key in miCoche){ // Alternativas: Object.keys(object);Object.values(obj); Object.entries();
-    console.log(key,miCoche[key]);
+for (let key in miCoche) { // Alternativas: Object.keys(object);Object.values(obj); Object.entries();
+    console.log(key, miCoche[key]);
 }
 
 // Comprobar si una propiedad está presente en un objeto
@@ -270,7 +281,7 @@ if ("year" in miCoche)
     console.log("El coche tiene año especificado");
 
 
-    /* DOM */
+/* DOM */
 // Aspectos basicos
 console.log(document);
 console.log(document.URL);
@@ -286,7 +297,7 @@ const grandparent2 = contenedores["grandparent"];
 
 const parents = document.getElementsByClassName("parent");
 let parent1 = parents[0];
-parent1= parents["parent1"];
+parent1 = parents["parent1"];
 parent1 = parents.parent1;
 
 const child1 = document.getElementById("child1");
@@ -295,3 +306,83 @@ console.clear();
 
 console.log(child1.textContent);
 console.log(child1.innerHTML);
+
+
+// Creacion de elementos
+
+let newDiv = document.createElement("div");
+newDiv.id = "identificador";
+newDiv.setAttribute("title", "divTitle");
+newDiv.title = "divTitle";
+newDiv.textContent = "Child 2.5";
+newDiv.innerText = "Child 2.5"; // Similara textContent pero respeta estilos,p.e display:none no lo mostraría
+// Modificacion de CSS
+
+newDiv.style.backgroundColor = "red";
+newDiv.style.border = "2px solid black";
+newDiv.style.cssText("background-color: red; color: white;");
+
+newDiv.className = "btn btn-primary";
+newDiv.className += " newClass";
+
+
+// Recomendado + Buena Practica
+newDiv.classList.add("otherClass");
+newDiv.classList.remove("newClass");
+
+newDiv.classList.toggle("newClass");
+newDiv.classList.toggle("newClass");
+
+// Anexarlo en los hijos
+parent1.appendChild(newDiv);
+parent1.appendChild(newDiv); // Sobreescribiria al primero,no pueden coexistir dos instancias del mismo nodo
+
+const otherChild = newDiv.cloneNode(true);
+otherChild.id = "otherID";
+otherDiv.textContent = " Other Div";
+parent1.prepend(otherDiv);
+parent1.insertBefore(otherDiv, child2);
+
+
+// Anexarlo al mismo nivel
+parent1.after(otherDiv);
+parent1.before(otherDiv);
+
+
+//Eliminar nodes / elementos
+
+otherDiv.remove();
+parent1.removeChild(newDiv);
+
+//Eventos
+
+document.querySelector("button").addEventListener("click", buttonClick);
+
+document.querySelectorAll("button")[0].addEventListener("click", buttonClick);
+document.querySelectorAll("button")[1].addEventListener("click", buttonClick);
+document.querySelectorAll("button")[2].addEventListener("click", buttonClick);
+
+
+
+const h2 = document.querySelector("h2");
+
+document.body.addEventListener(("mousemove"), updateCoords);
+function updateCoords(event) {
+    h2.textContent = `Coordenadas: X:${event.x} Y:${event.y}`
+}
+
+const input = document.querySelector("input");
+input.addEventListener("focus", logEvent);
+input.addEventListener("blur", logEvent);
+
+
+// Aspectos mas avanzados - Higher order functions
+
+// MAP
+
+let opt1 = [1,2,3];
+
+let opt2 = [];
+opt2 = opt1.map(function(value,index){
+    return value*2;
+});
