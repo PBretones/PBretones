@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.falla {
+  background-image: linear-gradient(rgba(16, 2, 49, 0.9), rgba(16, 2, 49, 0.9)),
+    url("./images/206145-El-Gran-Teatro-Falla.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+
+.creator {
+  background-image: linear-gradient(rgba(16, 2, 49, 0.9), rgba(16, 2, 49, 0.9)),
+    url("./images/premios-once-28.jpg");
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: 0% 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
