@@ -1,4 +1,4 @@
-import '../../styles.css';
+import '../../styles/styles.scss';
 import { Button, Card, Paper, Typography, CardContent, CardActions } from '@material-ui/core';
 import React from "react";
 

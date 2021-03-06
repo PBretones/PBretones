@@ -3,7 +3,7 @@ import { CategoriesElements } from '../../components/Categories/CategoriesElemen
 import { BrowserRouter, Route, Switch, Link, Router } from 'react-router-dom';
 import { CreatorChirigota } from '../../components/Categories/CreatorChirigota';
 
-export const chirigota = () => {
+export const Chirigota = () => {
 
 
 
@@ -12,7 +12,6 @@ export const chirigota = () => {
             <div className="creator">
                 <Sidebar />
                 <CreatorChirigota />
-
             </div>
         </>
     );

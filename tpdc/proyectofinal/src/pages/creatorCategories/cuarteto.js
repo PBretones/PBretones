@@ -3,7 +3,7 @@ import { CategoriesElements } from '../../components/Categories/CategoriesElemen
 import { BrowserRouter, Route, Switch, Link, Router } from 'react-router-dom';
 import { CreatorCuarteto } from '../../components/Categories/CreatorCuarteto';
 
-export const cuarteto = () => {
+export const Cuarteto = () => {
 
 
 
@@ -12,7 +12,6 @@ export const cuarteto = () => {
             <div className="creator">
                 <Sidebar />
                 <CreatorCuarteto />
-
             </div>
         </>
     );

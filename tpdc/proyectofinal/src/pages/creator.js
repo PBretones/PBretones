@@ -9,12 +9,12 @@ export const Creator = () => {
 
 
     return (
-        <>
-            <div className="creator">
-                <Sidebar />
-                <CreatorCategories />
-            </div>
-        </>
+
+        <div className="creator">
+            <Sidebar />
+            <CreatorCategories />
+        </div>
+
     );
 }
 

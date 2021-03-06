@@ -1,6 +1,5 @@
 import React from "react";
 import { CategoriesElements } from './CategoriesElements';
-import '../../styles.css';
 import comparsa from '../../images/comparsa/la_eternidad.jpg';
 import chirigota from '../../images/chirigota/los_cadizfornia.jpg';
 import cuarteto from '../../images/cuarteto/el_more.jpg';
@@ -18,13 +17,12 @@ export const Categories = () => {
                     <div className="subtitle"><span className="subtext">Crea tu propio pase de carnaval de tu agrupación favorita: elige los audios que más te han gustado,únelos y descárgatelos...o escuchalos online!</span><Button className="moreButton" variant="contained" size="large" color="primary" disableElevation> Saber Más </Button></div>
                 </div>
                 <div className="cardsRow">
-                    <Link to='/creator/comparsa' ><CategoriesElements image={<img src={comparsa} alt="Comparsa" width="250px" height="150px" object-fit="cover" />} children="Comparsa"></CategoriesElements></Link>
-                    <Link to="/creator/chirigota" ><CategoriesElements image={<img src={chirigota} alt="Chirigota" width="250px" height="150px" object-fit="cover" />} children="Chirigotas"></CategoriesElements></Link>
-                    <Link to="/creator/cuarteto" ><CategoriesElements image={<img src={cuarteto} alt="Cuarteto" width="250px" height="150px" object-fit="cover" />} children="Cuartetos"></CategoriesElements></Link>
-                    <Link to="/creator/coro" ><CategoriesElements image={<img src={coro} alt="Coro" width="250px" height="150px" object-fit="cover" />} children="Coros"></CategoriesElements></Link>
+                    <Link to='/creator/comparsa' ><CategoriesElements image={<img src={comparsa} alt="Comparsa" width="250px" height="150px" object-fit="cover" />} children="COMPARSA"></CategoriesElements></Link>
+                    <Link to="/creator/chirigota" ><CategoriesElements image={<img src={chirigota} alt="Chirigota" width="250px" height="150px" object-fit="cover" />} children="CHIRIGOTA"></CategoriesElements></Link>
+                    <Link to="/creator/cuarteto" ><CategoriesElements image={<img src={cuarteto} alt="Cuarteto" width="250px" height="150px" object-fit="cover" />} children="CUARTETO"></CategoriesElements></Link>
+                    <Link to="/creator/coro" ><CategoriesElements image={<img src={coro} alt="Coro" width="250px" height="150px" object-fit="cover" />} children="CORO"></CategoriesElements></Link>
                 </div>
             </div>
         </>
     );
 }
-export default Categories;

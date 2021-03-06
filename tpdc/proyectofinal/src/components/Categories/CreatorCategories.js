@@ -1,4 +1,6 @@
 import { CategoriesElements } from '../../components/Categories/CategoriesElements';
+import { Tupase } from '../Categories/Tupase';
+import { SearchBox } from '../Categories/SearchBox';
 import comparsa1 from '../../images/comparsa/la_eternidad.jpg';
 import comparsa2 from '../../images/comparsa/oh_capitan.jpg';
 import comparsa3 from '../../images/comparsa/chusma_selecta.jpg';
@@ -15,7 +17,7 @@ import coro1 from '../../images/coro/creaciones_sa.jpg';
 import coro2 from '../../images/coro/el_orfeon.jpg';
 import coro3 from '../../images/coro/el_patio.jpg';
 import coro4 from '../../images/coro/rockola.jpg';
-import { BrowserRouter, Route, Switch, Link, Router } from 'react-router-dom';
+import { Switch, Link, Router } from 'react-router-dom';
 import React from 'react';
 
 
@@ -35,18 +37,18 @@ export const CreatorCategories = () => {
 
     return (
         <>
-            <div className="creator">
-                <div className="creatorRow">
-                    <div className="cardsPosition">
 
-                        <Link to='/creator/comparsa' ><CategoriesElements children="comparsa" image={<img src={randomComparsa} alt={"Comparsa"} width="350px" height="225px" object-fit="cover" />} /></Link>
-                        <Link to="/creator/chirigota" ><CategoriesElements children="chirigota" image={<img src={randomChirigota} alt="Chirigota" width="350px" height="225px" object-fit="cover" />} /></Link>
-                        <Link to="/creator/cuarteto" ><CategoriesElements children="cuarteto" image={<img src={randomCuarteto} alt="Cuarteto" width="350px" height="225px" object-fit="cover" />} /></Link>
-                        <Link to="/creator/coro" ><CategoriesElements children="coro" image={<img src={randomCoro} alt="Coro" width="350px" height="225px" object-fit="cover" />} /></Link>
-
-                    </div>
+            <div className="creatorRow">
+                <SearchBox />
+                <Tupase />
+                <div className="cardsPosition">
+                    <Link to='/creator/comparsa' ><CategoriesElements children="COMPARSA" image={<img src={randomComparsa} alt="Comparsa" width="400px" height="225px" object-fit="cover" />} /></Link>
+                    <Link to="/creator/chirigota" ><CategoriesElements children="CHIRIGOTA" image={<img src={randomChirigota} alt="Chirigota" width="400px" height="225px" object-fit="cover" />} /></Link>
+                    <Link to="/creator/cuarteto" ><CategoriesElements children="CUARTETO" image={<img src={randomCuarteto} alt="Cuarteto" width="400px" height="225px" object-fit="cover" />} /></Link>
+                    <Link to="/creator/coro" ><CategoriesElements children="CORO" image={<img src={randomCoro} alt="Coro" width="400px" height="225px" object-fit="cover" />} /></Link>
                 </div>
             </div>
+
         </>
     );
 }

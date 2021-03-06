@@ -1,4 +1,4 @@
-import '../../styles.css';
+import '../../styles/styles.scss';
 import { Pagination } from '@material-ui/lab';
 import { ThemeProvider } from '@material-ui/styles';
 import React from "react";

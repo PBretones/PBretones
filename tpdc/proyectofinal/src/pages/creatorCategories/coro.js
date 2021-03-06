@@ -3,7 +3,7 @@ import { CategoriesElements } from '../../components/Categories/CategoriesElemen
 import { BrowserRouter, Route, Switch, Link, Router } from 'react-router-dom';
 import { CreatorCoro } from '../../components/Categories/CreatorCoro';
 
-export const coro = () => {
+export const Coro = () => {
 
 
 
