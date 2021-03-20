@@ -6,10 +6,12 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 export const Sidebar = () => {
     const [sidebarStatus, setSidebarStatus] = useState(false);
+    const against = !sidebarStatus;
+
     return (
-        <>  <button className="sideButton" onClick={() => setSidebarStatus(!sidebarStatus)}>
-            TEST
-            </button>
+        <>  <div className={`sideButton  ${sidebarStatus ? 'active-rope-in' : ''} ${against ? 'active-rope-out' : ''} `} onClick={() => setSidebarStatus(!sidebarStatus)}>
+
+        </div>
             <SidebarElements setSidebarStatus={setSidebarStatus} sidebarStatus={sidebarStatus} >
                 <div className="sideLogo"><NavLink to="/" className="text"><span className="paseSide">TUPASE</span><span className="carnavalSide">DECARNAVAL</span></NavLink></div>
                 <div className="sideText">

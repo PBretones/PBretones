@@ -7,7 +7,7 @@ export const Tupase = ({ children }) => {
     return (
         <>
             <div className="myBreadcrumb">
-                <div className="title"><span className="paseSide">TUPASE<span className="carnavalSide">DE{children}</span></span></div>
+                <div className="myTitle"><span className="paseSide">TUPASE<span className="carnavalSide">DE{children}</span></span></div>
             </div>
         </>
     );

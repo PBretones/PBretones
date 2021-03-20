@@ -1,4 +1,4 @@
-import { Sidebar } from '../components/Sidebar/Sidebar';
+
 import { Button } from '@material-ui/core';
 
 
@@ -7,7 +7,7 @@ export const User = () => {
     return (
         <>
             <div className="falla">
-                <Sidebar />
+
                 <div className="user">
                     <div className="userLogin">
                         <div className="loginDetails">

@@ -9,7 +9,7 @@ export const Data = () => {
             cover: "https://chillhop.com/wp-content/uploads/2021/02/7f102bdde417f6ead9a120b2b931449e5c12b4da-1024x1024.jpg",
             id: uuidv4(),
             active: true,
-            audio: "https://mp3.chillhop.com/serve.php/?mp3=12997",
+            audio: "https://m.box.com/file/613161205556/download?shared_link=https://app.box.com/s/qkq3qy11xdv00mb5za138d8i3xbyyh3v",
             color: ["#a276ff", "white"]
         },
 

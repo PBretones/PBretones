@@ -4,15 +4,13 @@ import { Button, Card, Paper, Typography, CardContent, CardActions } from '@mate
 
 
 
-export const CategoriesElements = ({ image, children }) => {
-    const test = () => {
-        alert("hey");
-    }
+export const CategoriesElements = ({ image, title }) => {
 
     return (
-        <div className="myCard" onClick={test}>
-            <div className="cardImage"><div className="cardRadius">{image}</div></div>
-            <div className="cardText"><span>{children}</span></div>
+        <div className="authorCard">
+            <p >{title}</p>
+            <img src={image} alt={title} />
+
         </div>
     )
 }

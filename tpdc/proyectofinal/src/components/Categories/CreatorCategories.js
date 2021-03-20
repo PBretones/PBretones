@@ -18,13 +18,16 @@ import coro2 from '../../images/coro/el_orfeon.jpg';
 import coro3 from '../../images/coro/el_patio.jpg';
 import coro4 from '../../images/coro/rockola.jpg';
 import { Switch, Link, Router } from 'react-router-dom';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import slugify from 'slugify';
+import { CreatorAuthor } from './CreatorAuthor';
 
 
 
 
 
-export const CreatorCategories = () => {
+export const CreatorCategories = (title) => {
+
 
     const firstComparsa = [comparsa1, comparsa2, comparsa3, comparsa4];
     const firstChirigota = [chirigota1, chirigota2, chirigota3, chirigota4];
@@ -35,20 +38,84 @@ export const CreatorCategories = () => {
     const randomCuarteto = firstCuarteto[Math.floor(Math.random() * firstCuarteto.length)];
     const randomCoro = firstCoro[Math.floor(Math.random() * firstCoro.length)];
 
+    const getPicture = (mod) => {
+        switch (mod) {
+            case "Comparsa":
+                return randomComparsa;
+            case "Chirigota":
+                return randomChirigota;
+            case "Coro":
+                return randomCoro;
+            case "Cuarteto":
+                return randomCuarteto;
+            default:
+                return randomComparsa
+
+        }
+    }
+
+
+    const [modalidad, setModalidad] = useState([]);
+    const [error, setError] = useState("");
+
+    useEffect(() => {
+        getModalidad();
+    }, [])
+
+
+    // A MANO
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'applications/json',
+            'Mode': 'no-cors'
+        }
+    };
+
+    const getModalidad = () => {
+        return fetch("http://localhost:3002/api/modalidad/show", {
+            method: "GET",
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                if (data.error) {
+                    setError(data.error);
+                } else {
+                    setModalidad(data);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
+
+
+
+
     return (
         <>
-
-            <div className="creatorRow">
-                <SearchBox />
-                <Tupase />
-                <div className="cardsPosition">
-                    <Link to='/creator/comparsa' ><CategoriesElements children="COMPARSA" image={<img src={randomComparsa} alt="Comparsa" width="400px" height="225px" object-fit="cover" />} /></Link>
-                    <Link to="/creator/chirigota" ><CategoriesElements children="CHIRIGOTA" image={<img src={randomChirigota} alt="Chirigota" width="400px" height="225px" object-fit="cover" />} /></Link>
-                    <Link to="/creator/cuarteto" ><CategoriesElements children="CUARTETO" image={<img src={randomCuarteto} alt="Cuarteto" width="400px" height="225px" object-fit="cover" />} /></Link>
-                    <Link to="/creator/coro" ><CategoriesElements children="CORO" image={<img src={randomCoro} alt="Coro" width="400px" height="225px" object-fit="cover" />} /></Link>
+            <div className="creator">
+                <div className="topHeader">
+                    <SearchBox />
+                    <Tupase />
+                </div>
+                <div className="creatorRow">
+                    <div className="pase authores">¿POR DÓNDE EMPEZAMOS?</div>
+                    <div className="authores">
+                        {modalidad.map(m => (
+                            <Link title={m.name} key={m._id} to={`/creator/${m._id}`} >
+                                <CategoriesElements title={m.name} image={getPicture(m.name)} />
+                            </Link>
+                        ))}
+                    </div>
+                    <div className="pase authores right"><div>ELIGE MODALIDAD</div></div>
                 </div>
             </div>
-
         </>
     );
 }

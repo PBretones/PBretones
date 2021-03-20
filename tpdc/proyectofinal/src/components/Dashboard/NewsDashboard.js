@@ -1,20 +1,119 @@
 import '../../styles/styles.scss';
 import { Button, Card, Paper, Typography, CardContent, CardActions } from '@material-ui/core';
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Pagination } from '@material-ui/lab';
+import { makeStyles } from "@material-ui/core/styles";
+
 
 export const NewsDashboard = () => {
+
+    const [news, setNews] = useState([]);
+    const [error, setError] = useState("");
+    const [body, setBody] = useState(1800);
+    const [init, setInit] = useState(0);
+    const handleBody = (value) => {
+
+        if (init === 0 && body === 1800) {
+            value = 2300;
+            setInit(body);
+            setBody(value);
+        } else {
+            value = 1800;
+            setInit(0);
+            setBody(value)
+        }
+    }
+
+
+    const [page, setPage] = useState(1);
+    const handleChange = (event, value) => {
+        setPage(value);
+    };
+
+
+
+    useEffect(() => {
+        getNews();
+    }, [])
+
+
+    // A MANO
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'applications/json',
+            'Mode': 'no-cors'
+        }
+    };
+
+
+    const getNews = () => {
+        return fetch("http://localhost:3002/api/news/show", {
+            method: "GET",
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                if (data.error) {
+                    setError(data.error);
+                } else {
+                    setNews(data);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+    const useStyles = makeStyles(() => ({
+        ul: {
+            "& .MuiPaginationItem-root": {
+                color: "white",
+
+            }
+        }
+    }));
+
+    const classes = useStyles();
+
+
+
     return (
-        <div className="newsDashboard">
-            <div className="newsInfo">
-                <div className="newsTitle"><span><h1>GANADORES DEL COAC 2020</h1></span></div>
-                <span className="newsText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ornare libero mi, eget pharetra nibh lacinia at. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                        Donec mi sapien, pellentesque ac diam quis, porttitor sodales ante. Sed vitae porttitor quam. Sed aliquet blandit est vitae vehicula. Pellentesque vitae faucibus dolor.</span>
-                <span className="newsHeader"><h4>Free, Help Yourself</h4></span>
-                <span className="newsText"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam rerum quas rem facilis nesciunt. Veritatis nisi tenetur fuga, libero cupiditate deserunt distinctio! Suscipit tempora praesentium similique laboriosam magnam impedit tempore iste harum, dicta deserunt et laborum nihil ratione, aperiam totam ipsam magni dolore enim voluptatem illum. Optio autem voluptatum tempora. Duis non turpis placerat, blandit neque ac, convallis erat. Duis lacinia elit non augue pellentesque, nec suscipit orci iaculis. Donec ut mauris ligula. Nulla sed ante orci. Nulla sit amet est luctus, maximus lorem varius, fringilla turpis. Nulla vel mollis enim, in suscipit nisi. Suspendisse potenti. Nunc non lorem sit amet ex dapibus varius id vitae lorem.</span>
-                <Button className="newsButton">CONTINUAR...</Button>
+        <>
+            <div className="news">
+
+                <Pagination className="pagination" page={page}
+                    onClick={() => {
+                        setInit(0);
+                        setBody(1800);
+                    }}
+                    onChange={handleChange} count={5} color="primary" variant="outlined" shape="rounded" classes={{ ul: classes.ul }} />
             </div>
-            <div className="newsPicture"></div>
-        </div>
+            <div className="newsDashboard">
+
+                <div className="newsInfo">
+                    {news.filter(news => news.id === page).map(news => (
+                        <>
+                            <div className="newsText">
+                                <div className="newsTitle">{news.title}</div>
+                                <div className="newsSubtitle">{news.subtitle}</div>
+                                <div id="myBody" className="newsBody">{news.body.substring(init, body)}{news.body.length > 500 ? "..." : null}</div>
+
+                                {news.body.length < 500 ? null : <Button onClick={handleBody} className="newsButton">{init <= 0 ? "NEXT" : "BACK"}</Button>}
+
+                            </div>
+
+                            <div className="newsBorder">
+                                <div className="newsPic"><img src={news.picture} alt={news.title} /></div>
+                            </div>
+                        </>
+                    ))}
+
+                </div>
+            </div>
+        </>
     )
 
 }
