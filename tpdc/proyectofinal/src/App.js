@@ -1,19 +1,21 @@
 import { Home } from './pages/home';
 import './styles/styles.scss';
 import { News } from './pages/news';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
+import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+
+import { BrowserRouter, NavLink, Route, Switch, useHistory } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import slugify from 'slugify';
+
 import { Creator } from './pages/creator';
 import { User } from './pages/user';
+import { UserDashboard } from './components/User/UserDashboard';
 import { Player } from './pages/player';
 import { Sidebar } from './components/Sidebar/Sidebar';
 
-import { Comparsa } from './pages/creatorCategories/comparsa';
-import { Chirigota } from './pages/creatorCategories/chirigota';
-import { Cuarteto } from './pages/creatorCategories/cuarteto';
-import { Coro } from './pages/creatorCategories/coro';
+import { isAuth } from './helpers';
+import AuthContext from './auth-context.js'
+
+
 import { CreatorAuthor } from './components/Categories/CreatorAuthor';
 import { CreatorTipo } from './components/Categories/CreatorTipo';
 import { CreatorAudio } from './components/Categories/CreatorAudio';
@@ -24,10 +26,15 @@ const theme = createMuiTheme({
       main: '#a276ff',
     },
     secondary: {
-      main: '#ffffff',
+      main: '#a276ff',
+      contrastText: ''
     },
-  },
+
+  }
+
 });
+
+
 
 
 
@@ -76,7 +83,7 @@ function App() {
   };
 
   const getAuthor = () => {
-    return fetch("http://localhost:3002/api/author", {
+    return fetch("http://localhost:3002/api/author/show", {
       method: "GET",
     })
       .then((response) => {
@@ -95,7 +102,6 @@ function App() {
   };
 
 
-
   return (
     <>
       <ThemeProvider theme={theme} >
@@ -107,13 +113,13 @@ function App() {
             <Route path="/news" exact component={News} />
             <Route path="/creator" exact component={Creator} />
             <Route path="/user" exact component={User} />
+            <Route path="/user/:userId" exact component={UserDashboard} />
             <Route path="/player" exact component={Player} />
 
 
             <Route path="/creator/:id" exact component={CreatorAuthor} />
             <Route path="/creator/:id/:authorId" exact component={CreatorTipo} />
             <Route path="/creator/:id/:authorId/:tipoId" exact component={CreatorAudio} />
-
           </Switch>
         </BrowserRouter>
       </ThemeProvider>

@@ -10,7 +10,6 @@ export const CategoriesElements = ({ image, title }) => {
         <div className="authorCard">
             <p >{title}</p>
             <img src={image} alt={title} />
-
         </div>
     )
 }

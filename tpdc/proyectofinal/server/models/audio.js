@@ -15,6 +15,10 @@ const audioSchema = new mongoose.Schema({
         type: String,
         unique: true,
         required: true
+    },
+    active: {
+        type: Boolean,
+        default: false
     }
 })
 

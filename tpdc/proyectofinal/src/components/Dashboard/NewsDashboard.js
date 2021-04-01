@@ -14,7 +14,7 @@ export const NewsDashboard = () => {
     const handleBody = (value) => {
 
         if (init === 0 && body === 1800) {
-            value = 2300;
+            value = 3600;
             setInit(body);
             setBody(value);
         } else {
@@ -99,7 +99,7 @@ export const NewsDashboard = () => {
                             <div className="newsText">
                                 <div className="newsTitle">{news.title}</div>
                                 <div className="newsSubtitle">{news.subtitle}</div>
-                                <div id="myBody" className="newsBody">{news.body.substring(init, body)}{news.body.length > 500 ? "..." : null}</div>
+                                <div id="myBody" className="newsBody">{news.body.substring(init, body)}{init === 0 ? "..." : null}</div>
 
                                 {news.body.length < 500 ? null : <Button onClick={handleBody} className="newsButton">{init <= 0 ? "NEXT" : "BACK"}</Button>}
 

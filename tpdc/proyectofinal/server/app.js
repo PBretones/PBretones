@@ -1,3 +1,4 @@
+require("./config/config");
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -9,47 +10,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/api", require('./routes/modalidadRoutes'))
-mongoose.connect('mongodb://localhost:27017/tpdc', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: true,
-    useCreateIndex: true
-})
-
 app.use("/api", require('./routes/tipoRoutes'))
-mongoose.connect('mongodb://localhost:27017/tpdc', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: true,
-    useCreateIndex: true
-})
-
 app.use("/api", require('./routes/audioRoutes'))
-mongoose.connect('mongodb://localhost:27017/tpdc', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: true,
-    useCreateIndex: true
-})
-
 app.use("/api", require('./routes/authorRoutes'))
-mongoose.connect('mongodb://localhost:27017/tpdc', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: true,
-    useCreateIndex: true
-})
-
-
 app.use("/api", require('./routes/newsRoutes'))
+app.use("/api", require('./routes/userRoutes'))
+
 mongoose.connect('mongodb://localhost:27017/tpdc', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,
     useCreateIndex: true
 })
-
-
 
 
 mongoose.connection.on('error', error => {

@@ -65,7 +65,11 @@ export const Categories = () => {
                     <div className="cardsRow">
                         {modalidad.map(m => (
                             <Link key={m._id} to={`/creator/${m._id}`} >
-                                <CategoriesElements title={m.name} image={getPicture(m.name)} />
+                                <div title={m.name} image={getPicture(m.name)}>
+
+                                    <img src={getPicture(m.name)} alt={m.name} />
+                                    <p>{m.name}</p>
+                                </div>
                             </Link>
                         ))}
                     </div>

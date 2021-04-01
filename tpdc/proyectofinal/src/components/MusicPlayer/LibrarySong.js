@@ -1,14 +1,15 @@
 import React from 'react';
 
 
-export const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, id, setSongs }) => {
+export const LibrarySong = ({ song, songs, setCurrentSong, CurrentSong, audioRef, isPlaying, id, setSongs }) => {
 
     const songSelectHandler = async () => {
         await setCurrentSong(song);
 
 
         const newSongs = songs.map((song) => {
-            if (song.id === id) {
+
+            if (song._id === id) {
 
                 return {
                     ...song,
@@ -32,9 +33,9 @@ export const LibrarySong = ({ song, songs, setCurrentSong, audioRef, isPlaying, 
     return (
         <div onClick={songSelectHandler} className={`librarySong ${song.active ? 'selected' : ""}`} >
             <div className="songDescription">
-                <img src={song.cover} alt="portada"></img>
+                <img src={song.picture} alt="portada"></img>
                 <h3>{song.name}</h3>
-                <h4>{song.artist}</h4>
+                <h4>{song.tipo}</h4>
             </div>
         </div>
     );

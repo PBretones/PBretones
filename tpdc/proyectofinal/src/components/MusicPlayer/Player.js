@@ -19,7 +19,7 @@ export const Player = ({
     //Event Handlers
     const activeLibraryHandler = (nextOrPrevious) => {
         const newSongs = songs.map((song) => {
-            if (song.id === nextOrPrevious.id) {
+            if (song._id === nextOrPrevious._id) {
 
                 return {
                     ...song,
@@ -58,7 +58,7 @@ export const Player = ({
 
     const skipTrackHandler = async (flow) => {
 
-        let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+        let currentIndex = songs.findIndex((song) => song._id === currentSong._id);
         if (flow === 'skip-forward') {
             await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
             activeLibraryHandler(songs[(currentIndex + 1) % songs.length]); // We avoid using useEffect putting it here
@@ -83,9 +83,8 @@ export const Player = ({
     return (
         <div className="player">
             <div className="timeControl">
-
                 <p>{getTime(songInfo.currentTime)}</p>
-                <div style={{ background: `linear-gradient(to right, ${currentSong.color[0]},${currentSong.color[1]})` }} className="track">
+                <div className="track">
                     <input onChange={dragHandler} min={0} max={songInfo.duration} value={songInfo.currentTime} type="range" />
                     <div style={trackAnimation} className="animateTrack"></div>
                 </div>

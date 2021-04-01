@@ -79,17 +79,15 @@ export const CreatorTipo = ({ }) => {
                 <div className="creatorRow">
                     <div className="topHeader">
                         <SearchBox />
-                        <Tupase children={"COMPARSA"} />
-
+                        {author.filter(author => author._id === tipoLocation).map(author => (
+                            <Tupase key={author._id} children={(author.name).replace(/\s+/g, '').toUpperCase()} />))}
                     </div>
                     <div className="authores">
-
                         {tipo.filter(tipo => tipo.author === tipoLocation).map(tipo => (
                             < Link key={tipo._id} to={`/creator/${tipo.modalidad}/${tipo.author}/${tipo._id}`} >
                                 <div className="authorCard" key={tipo._id}>
                                     <p>{tipo.name}</p>
                                     <img src={tipo.picture} alt={tipo.name} />
-
                                 </div>
                             </ Link>
                         ))}

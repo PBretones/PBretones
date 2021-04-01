@@ -1,14 +1,14 @@
 import { CategoriesElements } from './CategoriesElements';
 import { SearchBox } from './SearchBox';
-import { Sidebar } from '../Sidebar/Sidebar';
+
 import { Tupase } from './Tupase';
 
-import { Switch, Link, Router, useLocation } from 'react-router-dom';
+import { Link, Router, useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 
 
-export const CreatorAuthor = ({ }) => {
+export const CreatorAuthor = () => {
     const [modalidad, setModalidad] = useState([]);
     const [author, setAuthor] = useState([]);
     const [error, setError] = useState("");
@@ -18,17 +18,6 @@ export const CreatorAuthor = ({ }) => {
         getModalidad();
     }, [])
 
-
-    // A MANO
-    const requestOptions = {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'applications/json',
-            'Mode': 'no-cors'
-        }
-    };
 
 
     const getAuthor = () => {
@@ -78,7 +67,8 @@ export const CreatorAuthor = ({ }) => {
                 <div className="creatorRow">
                     <div className="topHeader">
                         <SearchBox />
-                        <Tupase children={"COMPARSA"} />
+                        {modalidad.filter(modalidad => modalidad._id === Location).map(modalidad => (
+                            <Tupase key={modalidad._id} children={(modalidad.name).toUpperCase()} />))}
                     </div>
                     <div className="authores">
                         {author.filter(author => author.modalidad._id === Location).map(author => (
@@ -87,7 +77,9 @@ export const CreatorAuthor = ({ }) => {
                                     <p>{author.name}</p>
                                     <img src={author.photo} alt={author.name}></img>
                                 </div>
+
                             </Link>
+
                         ))}
                     </div>
                 </div>
