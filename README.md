@@ -2,7 +2,7 @@
 - 👋 Hola, soy Pedro Bretones 
 - 👀 En mi tiempo libre, me apasionan los juegos de mesa y el padel
 - 🌱 Actualmente me encuentro mejorando mi proyecto **TUPASEDECARNAVAL**
-- ⚙️ Uso a diario: .html, .css, .js, .nodejs, .mongodb
+- ⚙️ Uso a diario: .html, .css, .reactjs, .nodejs, .mongodb
 - 📫 Puedes contactarme en https://www.linkedin.com/in/pbretones/
 
 #### Tecnologias conocidas:
