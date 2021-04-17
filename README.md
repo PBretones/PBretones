@@ -11,7 +11,7 @@
 ![img](https://img.shields.io/badge/-Bootstrap-7952B3?logo=bootstrap&logoColor=white&logoWidth=30)
 ![img](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=white&logoWidth=30)
 ![img](https://img.shields.io/badge/-jQuery-0769AD?logo=jquery&logoColor=white&logoWidth=30)
-![img](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&logoWidth=30)
+![img](https://img.shields.io/badge/-ReactJS-61DAFB?logo=react&logoColor=white&logoWidth=30)
 
 
 ![img](https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white&logoWidth=30)
